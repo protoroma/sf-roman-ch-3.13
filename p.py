@@ -31,11 +31,11 @@ class Tag:
         attrs = " ".join(attrs)
 
         if len(self.children) > 0:
-            opening = "<{tag} {attrs}>".format(tag=self.tag, attrs=attrs)
+            opening = "\n<{tag} {attrs}>\n".format(tag=self.tag, attrs=attrs)
             internal = "%s" % self.text
             for child in self.children:
                 internal += str(child)
-            ending = "</%s>" % self.tag
+            ending = "\n</%s>" % self.tag
             return opening + internal + ending
         else:
             if self.is_single:
